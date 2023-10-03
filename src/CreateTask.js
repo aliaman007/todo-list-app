@@ -5,14 +5,34 @@ function CreateTask() {
   const { title, setTitle } = useState("");
   const navigate = useNavigate();
   const displayValue = (event) => {
-    alert(
-      "Task Created  Title: " +
-        event.target[0].value +
-        "  UserId : " +
-        event.target[1].value
-    );
-    // setTitle(event.target[0].value);
-    // setUserId(event.target[1].value);
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+          id: 1,
+          title: event.target[0].value,
+          body: 'bar',
+          userId: event.target[1].value,
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => alert(
+            "Task Created  Title: " +
+              event.target[0].value +
+              "  UserId : " +
+              event.target[1].value
+          ));
+   
+    // alert(
+    //   "Task Created  Title: " +
+    //     event.target[0].value +
+    //     "  UserId : " +
+    //     event.target[1].value
+    // );
+    setTitle(event.target[0].value);
+    setUserId(event.target[1].value);
   };
   const navigateToHome = () => {
     

@@ -34,24 +34,7 @@ console.log('State while navigating to Update Task',data.title)
         setData(data);
       });
   },[]);
-//   const addTasks=()=>{
-//     fetch('https://jsonplaceholder.typicode.com/posts', {
-//   method: 'POST',
-//   body: JSON.stringify({
-//     title: 'foofred',
-//     body: 'bar',
-//     userId: 1,
-//   }),
-//   headers: {
-//     'Content-type': 'application/json; charset=UTF-8',
-//   },
-// })
-//   .then((response) => response.json())
-//   .then((json) => console.log(json));
 
-
-
-// }
 const deleteTask=()=>{
     fetch('https://jsonplaceholder.typicode.com/posts/1', {
   method: 'DELETE',
@@ -102,11 +85,6 @@ const deleteTask=()=>{
               </CTable>
             
      
-          {/* <p>{item.id}</p>
-        <p>{item.title}</p>
-        <p>{item.completed}</p>
-         */}
-          {/* </div> */}
     </div>
   );
 }

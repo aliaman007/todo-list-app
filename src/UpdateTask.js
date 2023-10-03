@@ -44,7 +44,7 @@ function UpdateTask() {
   return (
     <div>
       <button onClick={navigateToHome}>Home</button>
-      <h1>EUpdate your Task Details</h1>
+      <h1>Update your Task Details</h1>
       <form onSubmit={displayValue}>
         <div className="div-form-field">
           <label >Update Task Title</label>
